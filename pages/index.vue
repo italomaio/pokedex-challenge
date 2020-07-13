@@ -189,7 +189,7 @@ export default {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: 60%;
+    max-width: 80%;
     margin: 0 auto;
     padding-bottom: 5rem;
   }

@@ -1,5 +1,6 @@
 {
   "name": "nuxtapp",
+  "description": "A Pokedex app created for show details of pokemons",
   "version": "1.0.0",
   "private": true,
   "scripts": {
