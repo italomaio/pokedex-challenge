@@ -56,25 +56,12 @@
                 </section>
               </div>
               <div class="rest--details">
-                <b-card no-body class="mb-1">
-                  <b-card-header header-tag="header" class="p-1" role="tab">
-                    <b-button block v-b-toggle.accordion-1>Games</b-button>
-                  </b-card-header>
-                  <b-collapse
-                    id="accordion-1"
-                    visible
-                    accordion="my-accordion"
-                    role="tabpanel"
-                  >
-                    <b-card-body>
-                      <b-card-text
-                        >I start opened because <code>visible</code> is
-                        <code>true</code></b-card-text
-                      >
-                      <b-card-text>{{ text }}</b-card-text>
-                    </b-card-body>
-                  </b-collapse>
-                </b-card>
+                <pokemon-games-section
+                  :games="pokemon.game_indices"
+                ></pokemon-games-section>
+                <pokemon-location-section
+                  :location-url="pokemon.location_area_encounters"
+                ></pokemon-location-section>
               </div>
             </div>
           </b-card-text>
@@ -94,11 +81,9 @@ export default {
         )
 
         if (data && status === 200) {
-          const {
-            data: dataDescription,
-            status: statusDescription,
-          } = await $axios.get(`pokemon-species/${data.id}`)
-          console.log(dataDescription, statusDescription)
+          const { data: dataDescription } = await $axios.get(
+            `pokemon-species/${data.id}`
+          )
 
           resolve({
             pokemon: {

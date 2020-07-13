@@ -18,9 +18,7 @@ export default {
       loading: this.$nuxt.loading,
     }
   },
-  mounted() {
-    console.log(this.loading)
-  },
+  mounted() {},
 }
 </script>
 

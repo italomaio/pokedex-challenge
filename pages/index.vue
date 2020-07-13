@@ -69,6 +69,7 @@ export default {
     'limit.selected': {
       handler(after, before) {
         this.searchPokemons()
+        this.pageNumber = 1
       },
       deep: true,
     },
@@ -86,7 +87,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$store)
     this.searchPokemons()
   },
   methods: {
@@ -96,9 +96,10 @@ export default {
         params: {
           limit: this.limit.selected,
           offset:
-            this.pageNumber * this.limit.selected - 10 - 1 === -1
+            this.pageNumber * this.limit.selected - this.limit.selected - 1 ===
+            -1
               ? 0
-              : this.pageNumber * this.limit.selected - 10 - 1,
+              : this.pageNumber * this.limit.selected - this.limit.selected,
         },
       })
 
