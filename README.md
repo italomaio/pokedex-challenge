@@ -1,4 +1,6 @@
-# nuxtapp
+# Pokedex App Challenge
+
+A Pokedex App made for a challenge.
 
 ## Build Setup
 

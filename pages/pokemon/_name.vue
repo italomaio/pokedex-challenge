@@ -97,7 +97,7 @@ export default {
           const {
             data: dataDescription,
             status: statusDescription,
-          } = await $axios.get(`pokemon-species/${data.name}`)
+          } = await $axios.get(`pokemon-species/${data.id}`)
           console.log(dataDescription, statusDescription)
 
           resolve({
